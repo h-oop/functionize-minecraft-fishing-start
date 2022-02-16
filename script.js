@@ -110,3 +110,41 @@ function selectVillager() {
   alexImgEl.classList.remove("active");
   villagerImgEl.classList.add("active");
 }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+function catchFish() {
+  if (character === "steve") {
+    // STEVE PROBABILITIES: cod (70%), salmon (20%), tropical (5%), puffer (5%)
+    simulateCatch(____, ____, ____);
+  } else if (character === "alex") {
+    // ALEX PROBABILITIES: cod (10%), salmon (10%), tropical (30%), puffer (50%)
+    simulateCatch(____, ____, ____);
+  } else if (character === "villager") {
+    // VILLAGER PROBABILITIES: cod (25%), salmon (25%), tropical (25%), puffer (25%)
+    simulateCatch(____, ____, ____);
+  }
+}
+
+function simulateCatch() {
+  let randNum = Math.random();
+    if (randNum < 0.7) {
+      numCod++;
+      codSpanEl.innerHTML = numCod;
+      resultImgEl.src = "img/Raw-Cod.png";
+    } else if (randNum < 0.9) {
+      numSalmon++;
+      salmonSpanEl.innerHTML = numSalmon;
+      resultImgEl.src = "img/Raw-Salmon.png";
+    } else if (randNum < 0.95) {
+      numTropical++;
+      tropicalSpanEl.innerHTML = numTropical;
+      resultImgEl.src = "img/Tropical-Fish.png";
+    } else {
+      numPuffer++;
+      pufferSpanEl.innerHTML = numPuffer;
+      resultImgEl.src = "img/Pufferfish.png";
+    }
+}
