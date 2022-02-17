@@ -21,6 +21,8 @@ let numPuffer = 0;
 // Fish Event
 fishBtnEl.addEventListener("click", catchFish);
 
+/*
+
 function catchFish() {
   if (character === "steve") {
     // STEVE PROBABILITIES: cod (70%), salmon (20%), tropical (5%), puffer (5%)
@@ -85,6 +87,10 @@ function catchFish() {
   }
 }
 
+*/
+
+
+
 // Character Select
 steveImgEl.addEventListener("click", selectSteve);
 alexImgEl.addEventListener("click", selectAlex);
@@ -118,27 +124,27 @@ function selectVillager() {
 function catchFish() {
   if (character === "steve") {
     // STEVE PROBABILITIES: cod (70%), salmon (20%), tropical (5%), puffer (5%)
-    simulateCatch(____, ____, ____);
+    simulateCatch(0.7, 0.9, 0.95);
   } else if (character === "alex") {
     // ALEX PROBABILITIES: cod (10%), salmon (10%), tropical (30%), puffer (50%)
-    simulateCatch(____, ____, ____);
+    simulateCatch(0.1, 0.2, 0.5);
   } else if (character === "villager") {
     // VILLAGER PROBABILITIES: cod (25%), salmon (25%), tropical (25%), puffer (25%)
-    simulateCatch(____, ____, ____);
+    simulateCatch(0.25, 0.5, 0.75);
   }
 }
 
-function simulateCatch() {
+function simulateCatch(cod, sam, trop) {
   let randNum = Math.random();
-    if (randNum < 0.7) {
+    if (randNum < cod) {
       numCod++;
       codSpanEl.innerHTML = numCod;
       resultImgEl.src = "img/Raw-Cod.png";
-    } else if (randNum < 0.9) {
+    } else if (randNum < sam) {
       numSalmon++;
       salmonSpanEl.innerHTML = numSalmon;
       resultImgEl.src = "img/Raw-Salmon.png";
-    } else if (randNum < 0.95) {
+    } else if (randNum < trop) {
       numTropical++;
       tropicalSpanEl.innerHTML = numTropical;
       resultImgEl.src = "img/Tropical-Fish.png";
@@ -149,4 +155,3 @@ function simulateCatch() {
     }
 }
 
-bnnbb
